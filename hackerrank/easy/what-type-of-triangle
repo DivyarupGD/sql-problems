@@ -1,0 +1,11 @@
+SELECT
+CASE
+    WHEN A=B AND B!=C AND A+B > C AND (A+B)/2 !=C
+        OR B=C AND C!=A AND B+C > A AND (B+C)/2 !=A
+        OR C=A AND A!=B AND A+C > B AND (A+C)/2 !=B  THEN 'Isosceles'
+    WHEN A!=B AND B!=C AND A!=C AND A+B>C AND B+C>A AND A+C>B  THEN 'Scalene'
+    WHEN A=B AND B=C AND C=A THEN 'Equilateral'
+    WHEN A+B<=C OR A+C<=B OR B+C<=A THEN 'Not A Triangle'
+    ELSE 'unknown'
+END AS triangle_type
+FROM TRIANGLES;

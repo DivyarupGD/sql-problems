@@ -1,0 +1,6 @@
+(SELECT CONCAT(NAME,"(",LEFT(OCCUPATION,1),")") FROM OCCUPATIONS ORDER BY NAME ASC LIMIT 100)
+UNION
+(SELECT CONCAT("There are a total of ", COUNT(OCCUPATION)," ",LOWER(OCCUPATION),"s.") FROM OCCUPATIONS GROUP BY OCCUPATION ORDER BY COUNT(OCCUPATION), LOWER(OCCUPATION) ASC LIMIT 100)
+
+In the above solution LIMIT is used because if it is not provided even if the 2 subqueries produce sorted results,
+after doing union, the result set is unsorted.
