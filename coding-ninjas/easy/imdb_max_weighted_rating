@@ -1,0 +1,1 @@
+SELECT genre.genre AS genre, MAX((Rating+MetaCritic/10.0)/2) AS weighted_rating from IMDB JOIN genre ON IMDB.Movie_id=genre.Movie_id WHERE IMDB.title LIKE '%2014%' AND genre.genre IS NOT NULL GROUP BY genre.genre ORDER BY genre.genre
