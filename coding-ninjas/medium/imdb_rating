@@ -1,0 +1,1 @@
+SELECT Title, Rating FROM IMDB INNER JOIN genre ON IMDB.Movie_id=genre.Movie_id WHERE UPPER(genre.genre) LIKE 'C%' AND IMDB.budget > 40000000 AND Title like '%2014%'
