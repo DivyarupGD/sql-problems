@@ -1,0 +1,3 @@
+SELECT distinct(session_id) FROM Playback p JOIN Ads a on p.customer_id = a.customer_id
+where (timestamp<start_time or timestamp>end_time) order by session_id
+
