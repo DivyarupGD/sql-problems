@@ -1,0 +1,6 @@
+with cte as
+(select managerId, count(*) as total_count
+from employee where managerId is not null
+group by managerId
+having count(*)>=5)
+select Name from Employee where id in (select distinct managerId from cte)
